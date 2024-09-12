@@ -1,0 +1,204 @@
+/* Ensure the body element takes up the full height of the viewport */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif; /* Use a clean, readable font */
+    color: #fff; /* Default text color */
+}
+
+/* Container styling */
+.greeting-container {
+    position: relative; /* Required for overlay positioning */
+    background-image: url('../assets/entrytravel.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 100vh; /* Ensure the container covers the full viewport height */
+    width: 100vw; /* Ensure the container covers the full viewport width */
+    color: white; /* Text color for readability on dark backgrounds */
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: center; /* Center child elements vertically */
+    align-items: center; /* Center child elements horizontally */
+    padding: 20px; /* Add padding to the container */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Overlay styling */
+.greeting-container::before {
+    content: ''; /* Empty content */
+    position: absolute; /* Absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+    z-index: 1; /* Place overlay above the background image */
+}
+
+/* Main content and children styling */
+.main-content, .header, .footer {
+    position: relative; /* Position relative for stacking context */
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+/* Header styling */
+.header {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%; /* Ensure header takes full width */
+    max-width: 1200px; /* Optional: Set a maximum width */
+    margin-bottom: 20px;
+    text-align: center; /* Center text in header */
+}
+
+/* Navigation styles */
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    display: inline;
+    margin: 0 15px; /* Increase spacing between navigation items */
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold; /* Make links stand out */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.nav ul li a:hover {
+    color: #ffd700; /* Change color on hover */
+}
+
+/* Main content styling */
+.main-content {
+    background: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%; /* Ensure content section takes full width */
+    max-width: 1200px; /* Optional: Set a maximum width */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+}
+
+/* Section styling */
+section {
+    margin-bottom: 20px; /* Add spacing between sections */
+}
+
+section h3 {
+    border-bottom: 2px solid #ffd700; /* Highlight section headings with a bottom border */
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Work Experience Section Title Styling */
+.work-experience h4 {
+    color: #ff9900; /* Bright color for company titles */
+    font-size: 16px; /* Smaller font size for company titles */
+    font-weight: bold; /* Make the titles bold */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+    cursor: pointer; /* Indicate that it's interactive */
+}
+
+/* Interactive Hover Effect */
+.work-experience h4:hover {
+    color: #ffcc00; /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge title on hover */
+    text-decoration: underline; /* Add underline to emphasize the hover effect */
+}
+
+/* Footer styling */
+.footer {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%; /* Ensure footer takes full width */
+    max-width: 1200px; /* Optional: Set a maximum width */
+    text-align: center; /* Center text in footer */
+}
+
+/* Footer links */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 10px 0; /* Add vertical spacing between footer items */
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.footer-links ul li a:hover {
+    color: #ffd700; /* Change color on hover */
+}
+
+/* Button styling */
+button {
+    background-color: #007BFF; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add smooth transition effects */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Form styling */
+form {
+    display: grid;
+    gap: 15px; /* Add spacing between form elements */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px; /* Add spacing below labels */
+}
+
+input[type="text"], input[type="date"], select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+    color: #888; /* Placeholder text color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+    }
+
+    .nav ul li {
+        margin: 10px 0;
+    }
+
+    .main-content, .header, .footer {
+        width: 90%;
+    }
+}
